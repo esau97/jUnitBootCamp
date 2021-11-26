@@ -86,7 +86,9 @@ class CarritoCompraServiceImplTest {
 		when(baseDatosServiceI.insertarArticulo(articulo)).thenReturn(4);
 		Integer id = carritoService.insertarArticulo(articulo);
 		assertEquals(4,id);
+		assertTrue(carritoService.getArticulos().contains(articulo));
 		verify(baseDatosServiceI).insertarArticulo(articulo);
+
 	}
 
 }
